@@ -9,9 +9,9 @@
   },
   "license": "ISC",
   "scripts": {
-    "start": "nodemon index.js -L --exec babel-node",
+    "serve": "nodemon index.js -L --exec babel-node",
     "build": "npx babel *.js -d dist",
-    "serve": "node dist/index.js"
+    "start": "node dist/index.js"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
