@@ -6,8 +6,8 @@ slack:
     name: edwiges
     token: no_token
     icon: ':edwiges:'
-  push_channel: comunicacao-gitlab-integracao
-  mr_channel: comunicacao-gitlab-integracao
+  push_channel: comunicacao-gitlab-teste
+  mr_channel: comunicacao-gitlab-teste
   clrPush: '#fb6c25'
   clrOpen: '#36a64f'
   clrUpdate: '#3019ff'
