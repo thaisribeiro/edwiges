@@ -57,5 +57,5 @@ var bot = new SlackBot({
 });
 
 function sendChannelMessage(message, params) {
-    bot.postMessageToChannel(conf.slack.mr_channel, message, params);
+    bot.postMessageToChannel('comunicacao-gitlab-integracao', message, params);
 }

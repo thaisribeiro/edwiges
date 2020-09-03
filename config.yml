@@ -20,5 +20,3 @@ gitlab:
     - Note Hook
     - Pipeline Hook
     - Merge Request Hook
-  url: https://edwiges-bot.herokuapp.com/webhook
-  token: MX4Jg6UooHWkEhCtXsCpGoL1d5qntYeA
