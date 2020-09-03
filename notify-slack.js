@@ -1,14 +1,16 @@
-import fs from 'fs';
-import yaml from 'js-yaml';
-import SlackBot from 'slackbots';
-import dotenv from 'dotenv';
+'use strict';
+
+var fs = require('fs');
+var yaml = require('js-yaml');
+var SlackBot = require('slackbots');
+var dotenv = require('dotenv');
 
 dotenv.config();
 const conf = yaml.load(fs.readFileSync('config.yml'));
 
 module.exports = {
-    mergeRequestMessage: function(event) {
-        const titleMessage = `Heeey, <!here> tem *Merge Request* novo para aprovar no projeto *${event.repository.description}*, confira no link abaixo: :point_down: :alisson-gamer: :bbb-bruna: :regoni-potato: :gun: :thaisbelta:`
+    mergeRequestMessage: function mergeRequestMessage (event) {
+        const titleMessage = 'Heeey, <!here> tem *Merge Request* novo para aprovar no projeto *' + event.repository.description + '*, confira no link abaixo: :point_down: :alisson-gamer: :bbb-bruna: :regoni-potato: :gun: :thaisbelta:';
         let slackParams = { 
             icon_emoji: conf.slack.bot.icon,     
             attachments: [{
@@ -26,7 +28,7 @@ module.exports = {
                     value: event.object_attributes.target_branch,
                     short: true          
                 }],
-                footer: `Autor: ${event.user.name}`
+                footer: 'Autor:' + event.user.name
             }]
         };
         sendChannelMessage(titleMessage, slackParams);
@@ -40,14 +42,14 @@ module.exports = {
             attachments: [{
                 color: conf.slack.clrWarning,
                 title: 'Resolva os conflitos ou problemas no pipeline antes de seguir :)',
-                fields: MRList.map((mr) => { return { 'value': mr } })
+                fields: MRList.map(function (mr) {
+                    return { 'value': mr };
+                })
             }]
         };
         sendChannelMessage(titleMessage, slackParams);
     }
 };
-
-console.log('TOKEN', process.env.TOKEN_BOT_SLACK);
 
 var bot = new SlackBot({
     name: conf.slack.bot.name,

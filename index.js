@@ -1,8 +1,7 @@
-import http from 'http';
-import fs from 'fs';
-import yaml from 'js-yaml';
-
-import slackbot from './notify-slack.js';
+var http = require('http');
+var fs = require('fs');
+var yaml = require('js-yaml');
+var slackbot = require('./notify-slack.js');
 
 const conf = yaml.load(fs.readFileSync('config.yml'));
 
