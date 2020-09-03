@@ -13,7 +13,7 @@ http.createServer(function (req, res) {
    res.statusCode = 200;
    res.end(conf.system.name)
   })
-}).listen(conf.system.port || 8080);
+}).listen(conf.system.port || 3000);
 
 webhookHandler.on('error', function (err) {
   console.error('Error:', err.message)
