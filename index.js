@@ -1,10 +1,9 @@
 import http from 'http';
 import fs from 'fs';
 import yaml from 'js-yaml';
-import dotenv from 'dotenv';
+
 import slackbot from './notify-slack.js';
 
-dotenv.config();
 const conf = yaml.load(fs.readFileSync('config.yml'));
 
 // Cria um servidor para lidar com webhooks Gitlab

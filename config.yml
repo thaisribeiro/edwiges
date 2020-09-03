@@ -4,7 +4,7 @@ system:
 slack: 
   bot:
     name: edwiges
-    token:
+    token: no_token
     icon: ':edwiges:'
   push_channel: comunicacao-gitlab-integracao
   mr_channel: comunicacao-gitlab-integracao

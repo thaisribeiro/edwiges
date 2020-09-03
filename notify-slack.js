@@ -1,7 +1,9 @@
-import * as fs from 'fs';
-import * as yaml from 'js-yaml';
+import fs from 'fs';
+import yaml from 'js-yaml';
 import SlackBot from 'slackbots';
+import dotenv from 'dotenv';
 
+dotenv.config();
 const conf = yaml.load(fs.readFileSync('config.yml'));
 
 module.exports = {
