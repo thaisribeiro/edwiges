@@ -47,6 +47,8 @@ module.exports = {
     }
 };
 
+console.log('TOKEN', process.env.TOKEN_BOT_SLACK);
+
 var bot = new SlackBot({
     name: conf.slack.bot.name,
     token:  process.env.TOKEN_BOT_SLACK
