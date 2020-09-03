@@ -1,0 +1,24 @@
+system: 
+  name: Edwiges
+  port: 8080
+slack: 
+  bot:
+    name: edwiges
+    token:
+    icon: ':edwiges:'
+  push_channel: comunicacao-gitlab-integracao
+  mr_channel: comunicacao-gitlab-integracao
+  clrPush: '#fb6c25'
+  clrOpen: '#36a64f'
+  clrUpdate: '#3019ff'
+  clrMerge: '#16c8c6'
+  clrNotAssigned: '#dd111f'
+  clrWarning: '#dd1207'
+gitlab:
+  events: 
+    - Push Hook
+    - Note Hook
+    - Pipeline Hook
+    - Merge Request Hook
+  url: https://90751865d945.ngrok.io/webhook
+  token: MX4Jg6UooHWkEhCtXsCpGoL1d5qntYeA
