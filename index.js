@@ -2,7 +2,9 @@ var http = require('http');
 var fs = require('fs');
 var yaml = require('js-yaml');
 var slackbot = require('./notify-slack.js');
+var dotenv = require('dotenv');
 
+dotenv.config();
 const conf = yaml.load(fs.readFileSync('config.yml'));
 
 // Cria um servidor para lidar com webhooks Gitlab
@@ -13,7 +15,7 @@ http.createServer(function (req, res) {
    res.statusCode = 200;
    res.end(conf.system.name)
   })
-}).listen(conf.system.port || 3000);
+}).listen(process.env.PORT || 3000);
 
 webhookHandler.on('error', function (err) {
   console.error('Error:', err.message)
