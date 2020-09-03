@@ -10,7 +10,7 @@ const conf = yaml.load(fs.readFileSync('config.yml'));
 
 module.exports = {
     mergeRequestMessage: function mergeRequestMessage (event) {
-        const titleMessage = 'Heeey, <!here> tem *Merge Request* novo para aprovar no projeto *' + event.repository.description + '*, confira no link abaixo: :point_down: :alisson-gamer: :bbb-bruna: :regoni-potato: :gun: :thaisbelta:';
+        const titleMessage = 'Heeey, <!here> tem *Merge Request* novo para aprovar no projeto *' + event.repository.description + '*, confira no link abaixo: :point_down: :bruno-feliz: :alisson-gamer: :bbb-bruna: :regoni-potato: :gun: :thaisbelta:';
         let slackParams = { 
             icon_emoji: conf.slack.bot.icon,     
             attachments: [{
